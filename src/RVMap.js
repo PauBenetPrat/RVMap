@@ -65,10 +65,9 @@ class RVMap {
     }
 
     filterInZone(polygon, locations) {
-        var self = this;
         return locations.filter( function(location){
-            return self.inside(location, Object.values(polygon.coordinates));
-        });
+            return this.inside(location, Object.values(polygon.coordinates));
+        }, this);
 
     }
 
@@ -129,11 +128,10 @@ class RVPolygon {
     }
 
     parseCoordinates(coordinates) {
-        var self = this;
         coordinates = coordinates ? coordinates : [];
-        coordinates.map(function(coordinate) {
-            self.addCoordinate(coordinate);
-        })
+        coordinates.forEach(function(coordinate) {
+            this.addCoordinate(coordinate);
+        }, this)
     }
 
     addCoordinate(coordinate) {
