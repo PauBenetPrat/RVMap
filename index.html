@@ -21,14 +21,7 @@
   <body>
     <div id="RVMap"></div>
     <script type="text/javascript" src="src/RVMap.js"></script>
-    <script>
-        function initMap() {
-            var rvMap = new RVMap(document.getElementById('RVMap'));
-            rvMap.initMap();
-        }
-    </script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=<YOUR-GOOGLE-MAPS-API-KEY>&callback=initMap">
-    </script>
+    <script>function initMap() { new RVMap(document.getElementById('RVMap'), null, true) }</script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL5LyufUOssBgPVYo8K729s7vedkJXLTA&callback=initMap"></script>
   </body>
 </html>
